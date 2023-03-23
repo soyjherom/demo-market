@@ -1,7 +1,6 @@
 package com.example.demomarket.persistency.mapper;
 
 import com.example.demomarket.domain.Purchase;
-import com.example.demomarket.domain.PurchaseItem;
 import com.example.demomarket.persistency.entities.Compra;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -19,7 +18,7 @@ public interface PurchaseMapper {
             @Mapping(source="medioPago", target="paymentMethod"),
             @Mapping(source="comentario", target="comment"),
             @Mapping(source="estado", target="state"),
-            @Mapping(source="productos", target="items")
+            @Mapping(source="productos", target="items"),
     })
     Purchase toPurchase(Compra compra);
     List<Purchase> toPurchases(List<Compra> compras);
