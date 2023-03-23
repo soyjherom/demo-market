@@ -1,5 +1,6 @@
 package com.example.demomarket.persistency.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +30,7 @@ public class Compra {
     @ManyToOne
     @JoinColumn(name="id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
-    @OneToMany(mappedBy="producto")
+    @OneToMany(mappedBy="compra", cascade = {CascadeType.ALL})
     private List<CompraProducto> productos;
 
     public List<CompraProducto> getProductos() {
