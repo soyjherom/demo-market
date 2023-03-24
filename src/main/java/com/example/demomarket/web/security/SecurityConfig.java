@@ -2,7 +2,6 @@ package com.example.demomarket.web.security;
 
 import com.example.demomarket.domain.service.MarketUserDetailsService;
 import com.example.demomarket.web.security.filter.JWTFilterRequest;
-import org.aspectj.lang.annotation.SuppressAjWarnings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -41,7 +40,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtFilterRequest, UsernamePasswordAuthenticationFilter.class);
     }
-
     @Bean
     @SuppressWarnings("deprecation")
     public static NoOpPasswordEncoder passwordEncoder(){
